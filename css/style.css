@@ -1,3 +1,42 @@
 body {
+	margin: 0;
+	padding: 0;
+}
 
+/* Start of Column CSS */
+#container1 {
+	clear: left;
+	float: left;
+	width: 100%;
+	overflow: hidden;
+	background: #ffa7a7; /* column 2 background colour */
+}
+#container2 {
+	float: left;
+	width: 100%;
+	position: relative;
+	right: 50%;
+	background: #fff689; /* column 1 background colour */
+}
+#markup {
+	float: left;
+	width: 46%;
+	position: relative;
+	left: 52%;
+	overflow: hidden;
+}
+#yahoo_input {
+	float: left;
+	width: 46%;
+	position: relative;
+	left: 56%;
+	overflow: hidden;
+}
+
+#markup_textarea,
+#yahoo_input_textarea {
+	width: 100%;
+	margin: 0px;
+	height: 600px;
+	resize: none;
 }
