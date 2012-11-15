@@ -9,8 +9,8 @@ body {
 }
 
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 #main_view {
@@ -20,13 +20,13 @@ body {
 /*************** main view header ***************/
 #main_view header {
 	background-color: #DCEBF7; /* Old browsers */
-    background: -moz-linear-gradient(top,  #525252 0%, #262626 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#525252), color-stop(100%,#262626)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #525252 0%,#262626 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #525252 0%,#262626 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #525252 0%,#262626 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #525252 0%,#262626 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#525252', endColorstr='#262626',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(top,  #525252 0%, #262626 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#525252), color-stop(100%,#262626)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #525252 0%,#262626 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #525252 0%,#262626 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #525252 0%,#262626 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #525252 0%,#262626 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#525252', endColorstr='#262626',GradientType=0 ); /* IE6-9 */
 	display: block;
 	height: 55px;
 	width: 100%;
@@ -35,34 +35,45 @@ body {
 	z-index: 90;
 }
 #main_view .width {
-    width: 90%;
-    margin: 0 auto;
+	width: 90%;
+	margin: 0 auto;
+}
+#main_view .title_width {
+	width: 100%;
+	text-align: center;
+	float: left;
+	position: fixed;
+	z-index: -1;
+	min-width: 850px;
 }
 #main_view header .menu:first-of-type {
-    float: left;
+	float: left;
 }
 #main_view header .menu:last-of-type {
-    float: right;
+	float: right;
 }
 #main_view header .width {
 	text-align: center
 }
-#main_view header .width a.title {
+#main_view header .title_width a.title {
 	display: inline-block;
-}
-#main_view header .width a.title div {
-	background-image: url("/static/img/title-app.png");
-	height: 55px;
-	width: 244px;
+	margin: 0 auto;
+	padding: 0;
+	font: 30px "Lucida Grande", sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+	color: #CCC;
+	margin: 8px 0 0 0;
+	text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
 }
 #main_view header ul.menu {
-    list-style-type: none;
+	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
 #main_view header ul.menu > li {
-    /*display: inline;*/
-    float: left;
+	/*display: inline;*/
+	float: left;
 }
 #main_view header ul.menu > li > a {
 	/*float: left;*/
@@ -83,20 +94,20 @@ body {
 }
 
 #main_view header ul.menu > li > a.sync.spin i {
-    -webkit-animation: spin 1s infinite linear;
-    -moz-animation: spin 1s infinite linear;
-    -o-animation: spin 1s infinite linear;
-    -ms-animation: spin 1s infinite linear;
+	-webkit-animation: spin 1s infinite linear;
+	-moz-animation: spin 1s infinite linear;
+	-o-animation: spin 1s infinite linear;
+	-ms-animation: spin 1s infinite linear;
 }
 
-#main_view header i  {
+#main_view header i {
 	margin: 2px 0 0 0;
 }
 #main_view header ul.menu > li > input[type="text"] {
-    /*float: left*/
-    
-    /* TODO: copy styles from above, tweak as appropriate */
-    
+	/*float: left*/
+
+	/* TODO: copy styles from above, tweak as appropriate */
+
 	margin: 12px 13px 0 0;
 	font-size: 14px;
 }
@@ -129,11 +140,11 @@ body {
 
 /*************** main view footer ***************/
 #main_view footer {
-    font-size: 0.8em;
-    color: gray;
-    margin: 15px;
-    clear: both;
-    text-align: center;
+	font-size: 0.8em;
+	color: gray;
+	margin: 15px;
+	clear: both;
+	text-align: center;
 }
 /*************************************************************************/
 
@@ -168,13 +179,10 @@ body {
 	overflow: hidden;
 }
 
-#markup_textarea,
-#yahoo_input_textarea {
+#markup_textarea, #yahoo_input_textarea {
 	width: 100%;
 	margin: 0px;
 	height: 600px;
 	resize: none;
 }
-
-
 
