@@ -128,6 +128,24 @@ $(document).ready(function() {
 		});
 	});
 	
+	
+	// ZeroClipboard stuff for the copy button
+	//set path
+	ZeroClipboard.setMoviePath('./assets/ZeroClipboard.swf');
+	//create client
+	var clip = new ZeroClipboard.Client();
+	//event
+	clip.addEventListener('mousedown', function() {		clip.setText($('#yahoo_input_textarea').val());
+	});
+	clip.addEventListener('complete', function(client, text) {
+		$('.top-right').notify({
+			message : {
+				text : 'Sucessfully copied text to clipboard - just paste it into your Yahoo! Answers post'
+			}
+		}).show();
+	});
+	//glue it to the button
+	clip.glue('copy');
 });
 
 // Sets the width and height of the textareas based on the size of their split container

@@ -107,7 +107,9 @@ textarea[readonly="readonly"] {
   color: orange;
 }
 
-
+.notifications {
+  z-index: 10000;
+}
 
 
 

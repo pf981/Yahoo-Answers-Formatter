@@ -10,43 +10,47 @@
     <!--Theme-->
     <link href="http://cdn.wijmo.com/themes/rocket/jquery-wijmo.css" rel="stylesheet" type="text/css" title="rocket-jqueryui" />
 
-
+    
     <link href="http://cdn.wijmo.com/jquery.wijmo-complete.all.2.2.0.min.css" rel="stylesheet" type="text/css" />
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    
+    <link href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="./css/bootstrap-notify.css" rel="stylesheet">
 
     <link href="./css/style.css" rel="stylesheet">
   </head>
 
-
   <body>
+    <div class='notifications top-right'></div>
+    <div class='notifications bottom-right'></div>
+    <div class='notifications top-left'></div>
+    <div class='notifications bottom-left'></div>
 
-    
-    
-    
-     <div class="wrapper">
-       
-       <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-          <a href="./index.html" class="brand">Yahoo! Answers Formatter</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active">
-                <a href="#"><i class="icon-home"></i> Home</a>
-              </li>
-              <li>
-                <a href="#about"><i class="icon-info-sign"></i> About</a>
-              </li>
-              <li>
-                <a href="#help"><i class="icon-question-sign"></i> Help</a>
-              </li>
-            </ul>
-          </div><!--/.nav-collapse -->
+    <div class="wrapper">
+
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <a href="./index.html" class="brand">Yahoo! Answers Formatter</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active">
+                  <a href="#"><i class="icon-home"></i> Home</a>
+                </li>
+                <li>
+                  <a href="#about"><i class="icon-info-sign"></i> About</a>
+                </li>
+                <li>
+                  <a href="#help"><i class="icon-question-sign"></i> Help</a>
+                </li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
-    </div>
+
        
       <div id="outer_hsplitter">
         <div id="toolbar_split">
@@ -71,7 +75,7 @@
             <div id="yahoo_input_header" class="split_header">
               <span id="yahoo_input_label" class="label label-inverse">Generated Yahoo! Answers Input</span>
                 <div class="btn-group pull-right">
-                  <a class="btn btn-primary btn-small">Copy</a>
+                  <a id="copy" name="copy" class="btn btn-primary btn-small">Copy</a>
                   <a class="btn btn-small btn-info" href="#" rel="popover" data-placement="left" data-content="This is the code that is generated from the markup. Copy and paste this into Yahoo! Answers to get a nicely formatted post." data-original-title="Generated Yahoo! Answers Input Info"><i class="icon-info-sign"></i></a>
                 </div>
             </div>
@@ -87,13 +91,8 @@
                 </div>
               </div>
 
-              <!-- <div id="yahoo_output">
-                hiyo
-              </div> -->
               <textarea readonly="readonly" id="yahoo_output_textarea" title="Preview of how the post will look in Yahoo! Answers" placeholder="This will be a preview of how your post will look..."></textarea>
-<!--               <textarea readonly="readonly" id="yahoo_output">
-                hiyo
-              </textarea> -->
+
             </div>
           </div>
         </div>
@@ -119,10 +118,16 @@
     <script src="//netdna.bootstrapcdn.com//twitter-bootstrap/2.0.4/js/bootstrap-tooltip.js"></script>
     <script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-twipsy.js"></script>
     <script src="http://twitter.github.com/bootstrap/1.4.0/bootstrap-popover.js"></script>
+    <!--Alerts JavaScript-->
+    <script src="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>
+    <script src="./js/bootstrap-notify.js"></script>
+    
+    <script src="./js/ZeroClipboard.min.js"></script>
     
         
     <script src="./js/scripts.js" type="text/javascript"></script>
-
     
   </body>
 </html>
