@@ -91,11 +91,43 @@ $(document).ready(function() {
 
 	// TODO: Change color of label when in focus
 	
+
+
 	// Handle info popovers
 	(function() {
 		$(".btn-info").popover();
 	})();
 
+	// Handle textarea selection
+	$(function() {
+		$('#markup_textarea').focus(function() {
+			$('#markup_label').removeClass('label-inverse');
+			$('#markup_label').addClass('label-success');
+		});
+		$('#markup_textarea').focusout(function() {
+			$('#markup_label').removeClass('label-success');
+			$('#markup_label').addClass('label-inverse');
+		});
+		
+		$('#yahoo_input_textarea').focus(function() {
+			$('#yahoo_input_label').removeClass('label-inverse');
+			$('#yahoo_input_label').addClass('label-success');
+		});
+		$('#yahoo_input_textarea').focusout(function() {
+			$('#yahoo_input_label').removeClass('label-success');
+			$('#yahoo_input_label').addClass('label-inverse');
+		});
+		
+		$('#yahoo_output_textarea').focus(function() {
+			$('#yahoo_output_label').removeClass('label-inverse');
+			$('#yahoo_output_label').addClass('label-success');
+		});
+		$('#yahoo_output_textarea').focusout(function() {
+			$('#yahoo_output_label').removeClass('label-success');
+			$('#yahoo_output_label').addClass('label-inverse');
+		});
+	});
+	
 });
 
 // Sets the width and height of the textareas based on the size of their split container
