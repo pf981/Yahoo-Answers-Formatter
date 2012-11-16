@@ -19,6 +19,7 @@ $(document).ready(function() {
     // animationOptions:{ animationDuration: 10000},
     // resizeSettings: {animationOptoins:{ animationDuration: 10000}},
 
+	// FIXME: When contracting, the textbox becomes too short
     expanded : function(e) {
       $("#vsplitter").wijsplitter("refresh");
       $("#inner_hsplitter").wijsplitter("refresh");
@@ -30,6 +31,9 @@ $(document).ready(function() {
     sized : function(e) {
       $("#vsplitter").wijsplitter("refresh");
       $("#inner_hsplitter").wijsplitter("refresh");
+      
+      // Resize textarea
+      $("#markup_textarea").css('height', $("#markup_split").height() - 30);
     }
   });
   $("#vsplitter").wijsplitter({
@@ -54,8 +58,7 @@ $(document).ready(function() {
       $("#outper_hsplitter").wijsplitter("refresh");
 
       // Resize textarea
-      $("#markup_textarea").css('width', $("#markup_split").width() - 20);
-      $("#markup_textarea").css('height', $("#markup_split").height() - 20);
+      $("#markup_textarea").css('width', $("#markup_split").width() - 30);
     }
   });
   $("#inner_hsplitter").wijsplitter({
@@ -72,14 +75,13 @@ $(document).ready(function() {
     showExpander : false,
     splitterDistance : $("#vsplitter").height() / 2,
     
-    // FIXME: Sometimes the others won't resize, leaving a strip on the edge.
     sized : function(e) {
-      $("#inner_hsplitter").wijsplitter("refresh");
+      $("#outer_hsplitter").wijsplitter("refresh");
       $("#vsplitter").wijsplitter("refresh");
     }
   });
   
   // Set initial textarea dimensions
-  $("#markup_textarea").css('width', $("#markup_split").width() - 20);
-  $("#markup_textarea").css('height', $("#markup_split").height() - 20);
+  $("#markup_textarea").css('width', $("#markup_split").width() - 30);
+  $("#markup_textarea").css('height', $("#markup_split").height() - 30);
 });
