@@ -53,14 +53,23 @@
         </div>
 
         <div id="vsplitter">
+          <!-- add question marks with pop-ups. Maybe make 1-time popups for first time users -->
           <div id="markup_split">
-            <span class="label label-inverse">Markup</span>
+            <div id="markup_header" class="split_header">
+              <span class="label label-inverse">Markup</span>
+            </div>
             <textarea id="markup_textarea" title="Enter markup or indented text" placeholder="Enter markup or indented text..."></textarea>
           </div>
+          
           <div id="inner_hsplitter">
+            
             <div id="yahoo_input_split">
-              MID
+            <div id="yahoo_input_header" class="split_header">
+              <span class="label label-inverse">Generated Yahoo Answers Input</span>
             </div>
+            <textarea id="yahoo_input_textarea" title="Generated Yahoo Answers Input. Copy and paste this into Yahoo Answers to get nicely formatted output" placeholder="This will be generated from the markup..."></textarea>
+            </div>
+            
             <div id="yahoo_output_split">
               Bottom
             </div>
