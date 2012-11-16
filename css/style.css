@@ -53,3 +53,30 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+
+#toolbar_split {
+  background-color: pink;
+  background-image: none;
+  height: 100%;
+  width: 100%;
+}
+#markup_split {
+  background-color: orange;
+  background-image: none;
+  height: 100%;
+  width: 100%;
+}
+#yahoo_input_split {
+  background-color: blue;
+  background-image: none;
+  height: 100%;
+  width: 100%;
+}
+
+#yahoo_output_split {
+  background-color: green;
+  background-image: none;
+  height: 100%;
+  width: 100%;
+}

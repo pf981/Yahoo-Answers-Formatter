@@ -49,19 +49,19 @@
     </div>
        
       <div id="outer_hsplitter">
-        <div id="toolbar">
+        <div id="toolbar_split">
           TOP
         </div>
 
         <div id="vsplitter">
-          <div id="markup">
+          <div id="markup_split">
             LEFT
           </div>
           <div id="inner_hsplitter">
-            <div id="yahoo_input">
+            <div id="yahoo_input_split">
               MID
             </div>
-            <div id="yahoo_output">
+            <div id="yahoo_output_split">
               Bottom
             </div>
           </div>
@@ -96,16 +96,20 @@
           panel2: {minSize: 50, scrollBars: "none"},
           orientation: "horizontal", 
           fullSplit: true,
+          splitterDistance: 100,
           
-          expanded: function (e) {$("#vsplitter").wijsplitter("refresh");}, 
-          collapsed: function (e) {    $("#vsplitter").wijsplitter("refresh");}, 
-          sized: function (e) {$("#vsplitter").wijsplitter("refresh");} 
+          expanded: function (e) {$("#vsplitter").wijsplitter("refresh"); $("#inner_hsplitter").wijsplitter("refresh");}, 
+          collapsed: function (e) {    $("#vsplitter").wijsplitter("refresh"); $("#inner_hsplitter").wijsplitter("refresh");}, 
+          sized: function (e) {$("#vsplitter").wijsplitter("refresh"); $("#inner_hsplitter").wijsplitter("refresh");}
           });
        $("#vsplitter").wijsplitter({ 
           panel1: {minSize: 50, scrollBars: "none"},
           panel2: {minSize: 50, scrollBars: "none"},
           orientation: "vertical", 
           fullSplit: true, 
+          showExpander: false,
+          splitterDistance: $(".wrapper").width()/2,
+          
           // The following refresh functions ensure that after resizing 
           // the vertical splitter, each of the horizontal panels shows its 
           // contents correctly. This prevents repainting issues.
@@ -117,11 +121,14 @@
           panel1: {minSize: 50, scrollBars: "none"},
           panel2: {minSize: 50, scrollBars: "none"},
           orientation: "horizontal", 
-          fullSplit: true
+          fullSplit: true,
+          showExpander: false,
+          splitterDistance: $("#vsplitter").height()/2,
           });
     });
     // var height = $(".wrapper").outerHeight(true);
     // $("#vsplitter").height(height).wijsplitter("refresh");
+    //$('#inner_hsplitter').wijsplitter({showExpander: true});
     
 </script>    
     
