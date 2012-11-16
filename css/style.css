@@ -4,8 +4,8 @@ html, body {
   padding: 0;
   font-family: "Lucida Grande", sans-serif;
   color: black;
-  background-color: #DCEBF7;
   min-width: 850px;
+  background-color: green;
 }
 
 * {
@@ -13,33 +13,40 @@ html, body {
   padding: 0;
 }
 
-/*#markup {
- float: left;
- width: 46%;
- position: relative;
- left: 52%;
- overflow: hidden;
- }
- #yahoo_input {
- float: left;
- width: 46%;
- position: relative;
- left: 56%;
- overflow: hidden;
- }
+/*FIXME: Get rid of white border on split handles*/
+/*.ui-resizable-handle, .ui-resizable-s, .wijmo-wijsplitter-vertical, .ui-resizable-e {
+  background-color: green !important;
+}*/
 
- #markup_textarea, #yahoo_input_textarea {
- width: 100%;
- margin: 0px;
- height: 600px;
- resize: none;
- }*/
+/*Get rid of white background on splits*/
+.ui-widget-content {
+    background: none !important;
+}
 
 #vsplitter {
   height: 400px
 }
 .wrapper {
-  background-color: red;
+/* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #E3FAFF 0%, #A3C4C9 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #E3FAFF 0%, #A3C4C9 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #E3FAFF 0%, #A3C4C9 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E3FAFF), color-stop(1, #A3C4C9));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #E3FAFF 0%, #A3C4C9 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #E3FAFF 0%, #A3C4C9 100%);
+  
+  
+  
   display: block;
   position:absolute;
   height:auto;
@@ -54,32 +61,17 @@ html, body {
   width: 100%;
 }
 
+#outer_hsplitter #vsplitter #inner_hsplitter {
+  background: none !important;
+}
 
-#toolbar_split {
-  background-image: none;
-  height: 100%;
-  width: 100%;
-  background-color: purple;
-}
-#markup_split {
-  background-color: orange;
-  background-image: none;
-  height: 100%;
-  width: 100%;
-}
-#yahoo_input_split {
-  background-color: blue;
-  background-image: none;
+#toolbar_split, #markup_split, #yahoo_input_split, #yahoo_output_split {
+  background: none !important;
   height: 100%;
   width: 100%;
 }
 
-#yahoo_output_split {
-  background-color: green;
-  background-image: none;
-  height: 100%;
-  width: 100%;
-}
+
 
 
 textarea {
@@ -91,9 +83,13 @@ textarea {
   border-width: 5px;
 }
 
+textarea[readonly="readonly"] {
+  background-color: #C9C9C9;
+  
+}
+
 
 .split_header {
-  /*background-color: navy;*/
   width: 100%;
   margin: 0;
   padding: 0;
@@ -116,15 +112,6 @@ textarea {
   color: orange;
 }
 
-#yahoo_output {
- /* background-color: #C0C0C0;*/
-  background-color: #A0A0A0;
-  width: 100%;
-  height: 100%;
-  resize: none;
-  margin: 0 0 0 10px;
-  padding: 0;
-}
 
 
 

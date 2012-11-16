@@ -19,7 +19,6 @@ $(document).ready(function() {
 		// animationOptions:{ animationDuration: 10000},
 		// resizeSettings: {animationOptoins:{ animationDuration: 10000}},
 
-		// FIXME: When contracting, the textbox becomes too short
 		expanded : function(e) {
 			refreshAllSplits();
 
@@ -109,8 +108,8 @@ function fixTextAreas()
 	$("#yahoo_input_textarea").css('height', $("#yahoo_input_split").height() - 50);
 
 	// Output doesn't have a border, so its offsets are different
-	$("#yahoo_output").css('width', $("#yahoo_output_split").width() - 20);
-	$("#yahoo_output").css('height', $("#yahoo_output_split").height() - 40);
+	$("#yahoo_output_textarea").css('width', $("#yahoo_output_split").width() - 30);
+	$("#yahoo_output_textarea").css('height', $("#yahoo_output_split").height() - 50);
 }
 
 // Refreshes all split containers
