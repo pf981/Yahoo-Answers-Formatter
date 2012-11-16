@@ -1,6 +1,30 @@
 /**
  * @author Paul Foster
  */
+var opts = {
+  lines: 9, // The number of lines to draw
+  length: 3, // The length of each line
+  width: 2, // The line thickness
+  radius: 3, // The radius of the inner circle
+  corners: 1, // Corner roundness (0..1)
+  rotate: 0, // The rotation offset
+  color: '#000', // #rgb or #rrggbb
+  speed: 1, // Rounds per second
+  trail: 60, // Afterglow percentage
+  shadow: false, // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinner', // The CSS class to assign to the spinner
+  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  top: 'auto', // Top position relative to parent in px
+  left: 'auto' // Left position relative to parent in px
+};
+var inputSpinnerTarget = document.getElementById('refresh_input');
+var outputSpinnerTarget = document.getElementById('refresh_output');
+var inputSpinner = new Spinner(opts).spin(inputSpinnerTarget);
+var outputSpinner = new Spinner(opts).spin(outputSpinnerTarget);
+var inputSpinnerTimeout;
+var outputSpinnerTimeout;
+
 $(document).ready(function() {
 	$("#outer_hsplitter").wijsplitter({
 		panel1 : {
@@ -153,10 +177,20 @@ $(document).ready(function() {
 		setTimeout(updateOutput, 1);
 	});
 
-	// $('#markup_textarea').bind('keypress', function() {
-		// alert('esse');
-		// setTimeout(updatePreview, 1);
-	// }); 
+	// This doesn't work with the check in the function
+	// stopInputSpinner();
+	// stopOutputSpinner();
+	inputSpinner.stop();
+	outputSpinner.stop();
+	
+	
+	$("#refresh_input").click(function() {
+		updateInput();
+	}); 
+	$("#refresh_output").click(function() {
+		updateOutput();
+	}); 
+
 });
 
 // Sets the width and height of the textareas based on the size of their split container
@@ -183,12 +217,42 @@ function refreshAllSplits()
 
 
 function updateInput(){
+	clearTimeout(inputSpinnerTimeout);
+	startInputSpinner();
     $("#yahoo_input_textarea").val($('#markup_textarea').val());
+	inputSpinnerTimeout = setTimeout(stopInputSpinner, 1000);
 }
 
 function updateOutput(){
+	clearTimeout(outputSpinnerTimeout);
+	startOutputSpinner();
     $("#yahoo_output_textarea").val($('#yahoo_input_textarea').val());
+	outputSpinnerTimeout = setTimeout(stopOutputSpinner, 1000);
 }
 // TODO: Add refresh button on input and output. Make it spin
+function startInputSpinner() {
+	if (!$('#refresh_input_icon').is(":visible"))
+		return;
+	inputSpinner.spin(inputSpinnerTarget);
+	$('#refresh_input_icon').hide();
+}
+function stopInputSpinner() {
+	if ($('#refresh_input_icon').is(":visible"))
+		return;
+	inputSpinner.stop();
+	$('#refresh_input_icon').show();
+}
+function startOutputSpinner() {
+	if (!$('#refresh_output_icon').is(":visible"))
+		return;
+	outputSpinner.spin(outputSpinnerTarget);
+	$('#refresh_output_icon').hide();
+}
+function stopOutputSpinner() {
+	if ($('#refresh_output_icon').is(":visible"))
+		return;
+	outputSpinner.stop();
+	$('#refresh_output_icon').show();
+}
 
 

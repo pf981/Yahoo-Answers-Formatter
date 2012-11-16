@@ -113,7 +113,10 @@ textarea[readonly="readonly"] {
 
 
 
-
+#refresh_input, #refresh_output {
+  width: 12px;
+  height: 20px;
+}
 
 
 
