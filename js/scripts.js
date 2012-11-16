@@ -89,10 +89,6 @@ $(document).ready(function() {
 	// The following fixes bug when resizing will leave a strip on the right until it is resized again
 	refreshAllSplits();
 
-	// TODO: Change color of label when in focus
-	
-
-
 	// Handle info popovers
 	(function() {
 		$(".btn-info").popover();
@@ -138,6 +134,7 @@ $(document).ready(function() {
 	clip.addEventListener('mousedown', function() {		clip.setText($('#yahoo_input_textarea').val());
 	});
 	clip.addEventListener('complete', function(client, text) {
+		// Create a notification in the top right
 		$('.top-right').notify({
 			message : {
 				text : 'Sucessfully copied text to clipboard - just paste it into your Yahoo! Answers post'
@@ -146,6 +143,20 @@ $(document).ready(function() {
 	});
 	//glue it to the button
 	clip.glue('copy');
+	
+	// Update while typing
+	$('#markup_textarea').keydown(function(event) {
+		setTimeout(updateInput, 1);
+		setTimeout(updateOutput, 1);
+	});
+	$('#yahoo_input_textarea').keydown(function(event) {
+		setTimeout(updateOutput, 1);
+	});
+
+	// $('#markup_textarea').bind('keypress', function() {
+		// alert('esse');
+		// setTimeout(updatePreview, 1);
+	// }); 
 });
 
 // Sets the width and height of the textareas based on the size of their split container
@@ -171,7 +182,13 @@ function refreshAllSplits()
 }
 
 
+function updateInput(){
+    $("#yahoo_input_textarea").val($('#markup_textarea').val());
+}
 
-
+function updateOutput(){
+    $("#yahoo_output_textarea").val($('#yahoo_input_textarea').val());
+}
+// TODO: Add refresh button on input and output. Make it spin
 
 
