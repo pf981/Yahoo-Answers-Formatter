@@ -21,25 +21,22 @@ $(document).ready(function() {
 
 		// FIXME: When contracting, the textbox becomes too short
 		expanded : function(e) {
-			$("#vsplitter").wijsplitter("refresh");
-			$("#inner_hsplitter").wijsplitter("refresh");
+			refreshAllSplits();
 
 			// Resize textarea
-			$("#markup_textarea").css('height', $("#markup_split").height() - 50);
+			fixTextAreas();
 		},
 		collapsed : function(e) {
-			$("#vsplitter").wijsplitter("refresh");
-			$("#inner_hsplitter").wijsplitter("refresh");
+			refreshAllSplits();
 
 			// Resize textarea
-			$("#markup_textarea").css('height', $("#markup_split").height() - 50);
+			fixTextAreas();
 		},
 		sized : function(e) {
-			$("#vsplitter").wijsplitter("refresh");
-			$("#inner_hsplitter").wijsplitter("refresh");
+			refreshAllSplits();
 
 			// Resize textarea
-			$("#markup_textarea").css('height', $("#markup_split").height() - 50);
+			fixTextAreas();
 		}
 	});
 	$("#vsplitter").wijsplitter({
@@ -60,12 +57,10 @@ $(document).ready(function() {
 		// the vertical splitter, each of the horizontal panels shows its
 		// contents correctly. This prevents repainting issues.
 		sized : function(e) {
-			$("#outper_hsplitter").wijsplitter("refresh");
-			$("#inner_hsplitter").wijsplitter("refresh");
+			refreshAllSplits();
 
 			// Resize textarea
-			$("#markup_textarea").css('width', $("#markup_split").width() - 30);
-			$("#yahoo_input_textarea").css('width', $("#yahoo_input_split").width() - 30);
+			fixTextAreas();
 		}
 	});
 	$("#inner_hsplitter").wijsplitter({
@@ -83,30 +78,51 @@ $(document).ready(function() {
 		splitterDistance : $("#vsplitter").height() / 2,
 
 		sized : function(e) {
-			$("#outer_hsplitter").wijsplitter("refresh");
-			$("#vsplitter").wijsplitter("refresh");
+			refreshAllSplits();
 
 			// Resize textarea
-			$("#yahoo_input_textarea").css('height', $("#yahoo_input_split").height() - 50);
+			fixTextAreas();
 		}
 	});
 
-	// Set initial textarea dimensions
-	$("#markup_textarea").css('width', $("#markup_split").width() - 30);
-	$("#markup_textarea").css('height', $("#markup_split").height() - 50);
-
-	$("#yahoo_input_textarea").css('width', $("#yahoo_input_split").width() - 30);
-	$("#yahoo_input_textarea").css('height', $("#yahoo_input_split").height() - 50);
+	// Set initial textarea dimensions	fixTextAreas();
 
 	// The following fixes bug when resizing will leave a strip on the right until it is resized again
-	$("#outer_hsplitter").wijsplitter("refresh");
-	$("#vsplitter").wijsplitter("refresh");
+	refreshAllSplits();
 
 	// TODO: Change color of label when in focus
-
+	
 	// Handle info popovers
 	(function() {
 		$(".btn-info").popover();
 	})();
 
 });
+
+// Sets the width and height of the textareas based on the size of their split container
+function fixTextAreas()
+{
+	$("#markup_textarea").css('width', $("#markup_split").width() - 30);
+	$("#markup_textarea").css('height', $("#markup_split").height() - 50);
+
+	$("#yahoo_input_textarea").css('width', $("#yahoo_input_split").width() - 30);
+	$("#yahoo_input_textarea").css('height', $("#yahoo_input_split").height() - 50);
+
+	// Output doesn't have a border, so its offsets are different
+	$("#yahoo_output").css('width', $("#yahoo_output_split").width() - 20);
+	$("#yahoo_output").css('height', $("#yahoo_output_split").height() - 40);
+}
+
+// Refreshes all split containers
+function refreshAllSplits()
+{
+	$("#outer_hsplitter").wijsplitter("refresh");
+	$("#vsplitter").wijsplitter("refresh");
+	$("#inner_hsplitter").wijsplitter("refresh");
+}
+
+
+
+
+
+
