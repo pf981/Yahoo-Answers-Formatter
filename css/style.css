@@ -108,7 +108,7 @@ textarea[readonly="readonly"] {
 }
 
 .notifications {
-  z-index: 10000;
+  z-index: 2000000000;
 }
 
 

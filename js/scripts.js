@@ -14,7 +14,7 @@ var opts = {
   shadow: false, // Whether to render a shadow
   hwaccel: false, // Whether to use hardware acceleration
   className: 'spinner', // The CSS class to assign to the spinner
-  zIndex: 2e9, // The z-index (defaults to 2000000000)
+  zIndex: 1, // The z-index (defaults to 2000000000)
   top: 'auto', // Top position relative to parent in px
   left: 'auto' // Left position relative to parent in px
 };
@@ -221,6 +221,9 @@ function updateInput(){
 	startInputSpinner();
     $("#yahoo_input_textarea").val($('#markup_textarea').val());
 	inputSpinnerTimeout = setTimeout(stopInputSpinner, 1000);
+	
+	// Changing the input will change the output, so update that too
+	updateOutput();
 }
 
 function updateOutput(){
