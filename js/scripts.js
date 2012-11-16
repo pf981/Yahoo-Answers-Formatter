@@ -49,14 +49,13 @@ $(document).ready(function() {
     // The following refresh functions ensure that after resizing
     // the vertical splitter, each of the horizontal panels shows its
     // contents correctly. This prevents repainting issues.
-    expanded : function(e) {
-      $("#inner_hsplitter").wijsplitter("refresh");
-    },
-    collapsed : function(e) {
-      $("#inner_hsplitter").wijsplitter("refresh");
-    },
     sized : function(e) {
       $("#inner_hsplitter").wijsplitter("refresh");
+      $("#outper_hsplitter").wijsplitter("refresh");
+
+      // Resize textarea
+      $("#markup_textarea").css('width', $("#markup_split").width() - 20);
+      $("#markup_textarea").css('height', $("#markup_split").height() - 20);
     }
   });
   $("#inner_hsplitter").wijsplitter({
@@ -72,10 +71,15 @@ $(document).ready(function() {
     fullSplit : true,
     showExpander : false,
     splitterDistance : $("#vsplitter").height() / 2,
+    
+    // FIXME: Sometimes the others won't resize, leaving a strip on the edge.
+    sized : function(e) {
+      $("#inner_hsplitter").wijsplitter("refresh");
+      $("#vsplitter").wijsplitter("refresh");
+    }
   });
+  
+  // Set initial textarea dimensions
+  $("#markup_textarea").css('width', $("#markup_split").width() - 20);
+  $("#markup_textarea").css('height', $("#markup_split").height() - 20);
 });
-// var height = $(".wrapper").outerHeight(true);
-// $("#vsplitter").height(height).wijsplitter("refresh");
-//$('#inner_hsplitter').wijsplitter({showExpander: true});
-$('#inner_hsplitter').wijsplitter("destroy");
-// $('#outer_hsplitter').wijsplitter({resizeSettings: {animationOptoins:{ animationDuration: 10}}});
