@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Yahoo Answers Formatter</title>
+    <title>Yahoo! Answers Formatter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="LATEX-style markup for Yahoo Answers">
     <meta name="author" content="Paul Foster">
@@ -29,7 +29,7 @@
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
-          <a href="./index.html" class="brand">Yahoo Answers Formatter</a>
+          <a href="./index.html" class="brand">Yahoo! Answers Formatter</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active">
@@ -57,7 +57,9 @@
           <div id="markup_split">
             <div id="markup_header" class="split_header">
               <span class="label label-inverse">Markup</span>
-              <a class="btn btn-small btn-info pull-right" href="#"><i class="icon-info-sign"></i></a>
+                <div class="btn-group pull-right">
+                  <a class="btn btn-small btn-info" href="#" rel="popover" data-placement="left" data-content="Enter LATEX-like markup here to create nicely formatted posts on Yahoo! Answers. For information on markup syntax, see the help section." data-original-title="Markup Info"><i class="icon-info-sign"></i></a>
+                </div>
             </div>
             <textarea id="markup_textarea" title="Enter markup or indented text" placeholder="Enter markup or indented text..."></textarea>
           </div>
@@ -66,19 +68,24 @@
             
             <div id="yahoo_input_split">
             <div id="yahoo_input_header" class="split_header">
-              <span class="label label-inverse">Generated Yahoo Answers Input</span>
+              <span class="label label-inverse">Generated Yahoo! Answers Input</span>
                 <div class="btn-group pull-right">
                   <a class="btn btn-primary btn-small">Copy</a>
-                  <a class="btn btn-small btn-info" href="#" rel="popover" data-placement="left" data-content="It's so simple to create a tooltop for my website!" data-original-title="Generated Yahoo Answers Input Info"><i class="icon-info-sign"></i></a>
+                  <a class="btn btn-small btn-info" href="#" rel="popover" data-placement="left" data-content="This is the code that is generated from the markup. Copy and paste this into Yahoo! Answers to get a nicely formatted post." data-original-title="Generated Yahoo! Answers Input Info"><i class="icon-info-sign"></i></a>
                 </div>
-  
-              <!-- TODO: Add info button -->
-              <!-- TODO: Add copy all button -->
             </div>
-            <textarea id="yahoo_input_textarea" title="Generated Yahoo Answers Input. Copy and paste this into Yahoo Answers to get nicely formatted output" placeholder="This will be generated from the markup..."></textarea>
+            
+            <textarea id="yahoo_input_textarea" title="Generated Yahoo! Answers Input. Copy and paste this into Yahoo! Answers to get nicely formatted output." placeholder="This will be generated from the markup..."></textarea>
             </div>
             
             <div id="yahoo_output_split">
+              <div id="yahoo_output_header" class="split_header">
+                <span class="label label-inverse">Preview Yahoo! Answers Output</span>
+                <div class="btn-group pull-right">
+                  <a class="btn btn-small btn-info" href="#" rel="popover" data-placement="left" data-content="This is a preview of how your post will look on Yahoo! Answers." data-original-title="Preview Yahoo! Answers Output Info"><i class="icon-info-sign"></i></a>
+                </div>
+                
+              </div>
               Bottom
             </div>
           </div>
