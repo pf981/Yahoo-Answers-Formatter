@@ -37,7 +37,7 @@ $(document).ready(function() {
 		},
 		orientation : "horizontal",
 		fullSplit : true,
-		splitterDistance : 500, // FIXME: Make smaller - This is how big the toolbar will be when you first start
+		splitterDistance : 200, // This is how big the toolbar will be when you first start
 
 		// TODO: Turn on ghosting so that that panel resizes as you drag, not after you release
 		// animationOptions:{ animationDuration: 10000},
