@@ -88,6 +88,12 @@ textarea[readonly="readonly"] {
   width: 100%;
   margin: 0;
   padding: 0;
+  /*height: 26px; /*FIXME:*/
+ height: 27px; /*FIXME:*/
+}
+
+.btn-group {
+  margin: 0 !important;
 }
 
 .label {
@@ -119,20 +125,25 @@ textarea[readonly="readonly"] {
 }
 
 
+.toolbar_container {
+  height: 300px !important;
+  /*height: 100% !important;*/
+  background-color: green !important;
+  overflow: scroll !important;
+}
 
 
+#toolbar_nav {
+  height: 26px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+#toolbar_nav > li > a
+{
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 10px !important;
+  margin: 0;
+}
 
 
