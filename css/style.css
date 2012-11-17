@@ -126,8 +126,6 @@ textarea[readonly="readonly"] {
 
 
 .toolbar_container {
-  height: 300px !important;
-  /*height: 100% !important;*/
   background-color: green !important;
   overflow: scroll !important;
 }

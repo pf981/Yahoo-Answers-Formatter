@@ -202,9 +202,12 @@ function fixTextAreas()
 	$("#yahoo_input_textarea").css('width', $("#yahoo_input_split").width() - 30);
 	$("#yahoo_input_textarea").css('height', $("#yahoo_input_split").height() - 50);
 
-	// Output doesn't have a border, so its offsets are different
 	$("#yahoo_output_textarea").css('width', $("#yahoo_output_split").width() - 30);
 	$("#yahoo_output_textarea").css('height', $("#yahoo_output_split").height() - 50);
+	
+	// $("#toolbar_container").css('width', $("#toolbar_split").width() - 30);
+	$("#toolbar_container").css('height', $("#toolbar_split").height() - 40);
+	
 }
 
 // Refreshes all split containers
