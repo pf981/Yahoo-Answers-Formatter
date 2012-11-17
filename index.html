@@ -150,11 +150,14 @@
                 <span id="yahoo_output_label" class="label label-inverse">Preview Yahoo! Answers Output</span>
                 <div class="btn-group pull-right">
                   <a id="refresh_output" name="refresh_output" class="btn btn-small" title="Refresh"><i id="refresh_output_icon" class="icon-refresh"></i></a>
-                  <a class="btn btn-small btn-info" href="#" rel="popover" data-placement="left" data-content="This is a preview of how your post will look on Yahoo! Answers." data-original-title="Preview Yahoo! Answers Output Info"><i class="icon-info-sign"></i></a>
+                  <a class="btn btn-small btn-info" href="#" rel="popover" data-placement="left" data-content="This is a preview of how your post will look on Yahoo! Answers. Same width and everything!" data-original-title="Preview Yahoo! Answers Output Info"><i class="icon-info-sign"></i></a>
                 </div>
               </div>
 
-              <textarea readonly="readonly" id="yahoo_output_textarea" title="Preview of how the post will look in Yahoo! Answers" placeholder="This will be a preview of how your post will look..."></textarea>
+              <div id="yahoo_output_textarea" title="Preview of how the post will look in Yahoo! Answers">
+                <!-- Tried using a <PRE> but it couldn't do word wrapping -->
+                <textarea readonly="readonly"  id="output_preview"></textarea>
+              </div>
 
             </div>
           </div>

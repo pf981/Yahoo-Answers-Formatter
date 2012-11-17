@@ -28,7 +28,7 @@ function parseYahooInput(yahooInput) {
 
 
 
-
+// TODO: Do Yahoo! Answers weird truncating thing when the line is too long without a space
 
 
 

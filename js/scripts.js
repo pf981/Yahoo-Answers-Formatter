@@ -236,8 +236,7 @@ function updateOutput(){
 	startOutputSpinner();
 	
     // $("#yahoo_output_textarea").val($('#yahoo_input_textarea').val());
-    $("#yahoo_output_textarea").val(parseYahooInput($('#yahoo_input_textarea').val()));
-    
+    $("#output_preview").text(parseYahooInput($('#yahoo_input_textarea').val()));
 	outputSpinnerTimeout = setTimeout(stopOutputSpinner, 1000);
 }
 // TODO: Add refresh button on input and output. Make it spin
