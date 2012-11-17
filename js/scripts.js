@@ -28,7 +28,7 @@ var outputSpinnerTimeout;
 $(document).ready(function() {
 	$("#outer_hsplitter").wijsplitter({
 		panel1 : {
-			minSize : 50,
+			minSize : 150,
 			scrollBars : "none"
 		},
 		panel2 : {
@@ -222,7 +222,9 @@ function refreshAllSplits()
 function updateInput(){
 	clearTimeout(inputSpinnerTimeout);
 	startInputSpinner();
-    $("#yahoo_input_textarea").val($('#markup_textarea').val());
+	
+    // $("#yahoo_input_textarea").val($('#markup_textarea').val());	$("#yahoo_input_textarea").val(parseMarkup($('#markup_textarea').val()));
+	
 	inputSpinnerTimeout = setTimeout(stopInputSpinner, 1000);
 	
 	// Changing the input will change the output, so update that too
