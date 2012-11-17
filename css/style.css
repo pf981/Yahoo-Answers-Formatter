@@ -144,4 +144,9 @@ textarea[readonly="readonly"] {
   margin: 0;
 }
 
+.popover {
+  /*Make the popover go over the nav bar*/
+  z-index:2000000001;
+}
+
 
