@@ -162,3 +162,19 @@ textarea, #yahoo_output_textarea {
   color: #333;
 }
 
+
+#output_preview:active, #output_preview:focus {
+  border: #CCC;
+  border-width: 10px;
+  outline: 0px !important;
+  transition: none;
+  -webkit-appearance: none !important;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  outline: none !important;
+  -webkit-transition: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+
