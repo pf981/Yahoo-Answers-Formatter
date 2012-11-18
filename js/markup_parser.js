@@ -6,7 +6,10 @@
 function parseMarkup(markup) {
 	var input = markup;
 	
-	// Convert spaces
+	// Convert tabs to 4 spaces
+	input  = input.replace(/\t/g, '    ');
+	
+	// Convert spaces to their unicode sequences
 	input  = input.replace(/^ /g, '&#160;').replace(/\n /g, '\n&#160;');
 	input  = input.replace(/  /g, ' &#160;');
 	
