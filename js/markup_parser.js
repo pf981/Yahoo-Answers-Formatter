@@ -4,7 +4,9 @@
 
 // This function converts the markup string into the yahoo input string. It returns the input string.
 function parseMarkup(markup) {
-	return markup; // FIXME: TODO: This is just a placeholder
+	var input = markup;
+	
+	return input; // FIXME: TODO: This is just a placeholder
 }
 
 // This function converts the yahoo input string into the preiview output string.
@@ -17,11 +19,24 @@ function parseYahooInput(yahooInput) {
 		// return String.fromCharCode(parseInt($1, 16));
 	// });
 	
+	// Convert tabs to a space
+	output  = output.replace(/\t+/g, ' ');
+	
+	// Remove neighboring white-space
+	output  = output.replace(/ {2,}/g, ' ');
+	
+	// Remove trailing white-space FIXME: Not sure if Y!A actually does this
+	output  = output.replace(/ +\n/g, '\n');
+	
+	// Remove spaces at the begining of the line
+	output  = output.replace(/^ +/g, '').replace(/\n +/g, '\n');
+	
 	// Convert HTML unicode sequences to their unicode characters
 	// e.g "&#160;" -> " "
 	output  = output.replace(/&#([0-9]{1,5});/g, function($0, $1) {
 		return String.fromCharCode(parseInt($1, 10));
 	});
+	
 
 	return output;
 }
