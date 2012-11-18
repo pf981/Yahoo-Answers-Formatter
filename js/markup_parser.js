@@ -6,6 +6,13 @@
 function parseMarkup(markup) {
 	var input = markup;
 	
+	// Convert spaces
+	input  = input.replace(/^ /g, '&#160;').replace(/\n /g, '\n&#160;');
+	input  = input.replace(/  /g, ' &#160;');
+	
+	// TODO: Parse \infty etc.
+	// TODO: Parse functions
+	
 	return input; // FIXME: TODO: This is just a placeholder
 }
 
