@@ -2,12 +2,15 @@
  * @author Paul Foster
  */
 
+var tabWidth = 4; // The number of spaces to convert tabs to
+
 // This function converts the markup string into the yahoo input string. It returns the input string.
 function parseMarkup(markup) {
 	var input = markup;
 	
-	// Convert tabs to 4 spaces
-	input  = input.replace(/\t/g, '    ');
+	// Convert tabs to 4 spaces FIXME: use tabWidth
+	input  = input.replace(/\t/g, '    '); // function - 4 spaces
+	
 	
 	// Convert spaces to their unicode sequences
 	input  = input.replace(/^ /g, '&#160;').replace(/\n /g, '\n&#160;');
