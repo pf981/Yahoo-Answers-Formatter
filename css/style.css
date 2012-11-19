@@ -179,7 +179,7 @@ textarea, #yahoo_output_textarea {
 
 
 
-.table-striped tbody tr:nth-child(odd):hover td {
+/*.table-striped tbody tr:nth-child(odd):hover td {
    background-color: #FFFFFF;
 }
 .table-striped tbody tr:nth-child(odd) td {
@@ -187,9 +187,10 @@ textarea, #yahoo_output_textarea {
 }
 .table th, .table tbody tr th:hover {
   background-color: orange;
+}*/
+thead {
+  background-color: blue;
 }
-
-
 
 
 

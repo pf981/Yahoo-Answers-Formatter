@@ -199,7 +199,7 @@ $(document).ready(function() {
     "bAutoWidth" : false,
     "bFilter" : false
   });
-  // new FixedHeader( oTable );
+  new FixedHeader( oTable );
 
       
 });
