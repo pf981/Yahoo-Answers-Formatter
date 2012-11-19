@@ -177,13 +177,9 @@ $(document).ready(function() {
 		setTimeout(updateOutput, 1);
 	});
 
-	// This doesn't work with the check in the function
-	// stopInputSpinner();
-	// stopOutputSpinner();
+	// Refresh button spinner code
 	inputSpinner.stop();
 	outputSpinner.stop();
-	
-	
 	$("#refresh_input").click(function() {
 		updateInput();
 	}); 
@@ -191,6 +187,8 @@ $(document).ready(function() {
 		updateOutput();
 	}); 
 
+
+  // Generate entities table from JSon
 });
 
 // Sets the width and height of the textareas based on the size of their split container

@@ -126,7 +126,7 @@ textarea, #yahoo_output_textarea {
 
 
 .toolbar_container {
-  background-color: green !important;
+  /*background-color: green !important;*/
   overflow: scroll !important;
 }
 
@@ -176,5 +176,21 @@ textarea, #yahoo_output_textarea {
   -webkit-transition: none !important;
   -webkit-box-shadow: none !important;
 }
+
+
+
+.table-striped tbody tr:nth-child(odd):hover td {
+   background-color: #FFFFFF;
+}
+.table-striped tbody tr:nth-child(odd) td {
+   background-color: #DFDDD9;
+}
+.table th, .table tbody tr th:hover {
+  background-color: orange;
+}
+
+
+
+
 
 
