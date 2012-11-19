@@ -200,6 +200,27 @@ $(document).ready(function() {
     "bFilter" : false
   });
   new FixedHeader( oTable );
+  
+ // var json = '{"result":true,"count":1}';
+  var entitiesObj = entities;
+  
+  oTable.fnAddData( [
+        ".1",
+        ".2",
+        ".3",
+        "2.3",
+        ".4" ] );
+        
+
+
+  $.each(entities, function(category, rows) {
+    oTable.fnAddData([category, "", "", "", ""]);
+    $.each(rows, function(index, row) {
+      oTable.fnAddData([String.fromCharCode(parseInt(row.entity_num, 10)), row.name, row.markup, row.entity_num, ""]);
+    });
+  });
+
+
 
       
 });

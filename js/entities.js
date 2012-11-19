@@ -3,7 +3,7 @@
  */
 
 // FIXME: TODO: Placeholder
-var entities = [{
+var entities = {
   "Common Arithmetic & Alebgra" : [{
     "name" : "INTEGRAL",
     "markup" : "\\integral",
@@ -13,10 +13,10 @@ var entities = [{
     "markup" : "\\integral",
     "entity_num" : 8747
   }],
-  "Common Arithmetic & Alebgra" : [{
+  "Cat2" : [{
     "name" : "INTEGRAL",
     "markup" : "\\integral",
     "entity_num" : 8747
   }]
-}];
+};
 
