@@ -28,7 +28,7 @@ var outputSpinnerTimeout;
 $(document).ready(function() {
 	$("#outer_hsplitter").wijsplitter({
 		panel1 : {
-			minSize : 50,
+			minSize : 150,
 			scrollBars : "none"
 		},
 		panel2 : {
@@ -37,7 +37,7 @@ $(document).ready(function() {
 		},
 		orientation : "horizontal",
 		fullSplit : true,
-		splitterDistance : 100,
+		splitterDistance : 200, // This is how big the toolbar will be when you first start
 
 		// TODO: Turn on ghosting so that that panel resizes as you drag, not after you release
 		// animationOptions:{ animationDuration: 10000},
@@ -202,9 +202,12 @@ function fixTextAreas()
 	$("#yahoo_input_textarea").css('width', $("#yahoo_input_split").width() - 30);
 	$("#yahoo_input_textarea").css('height', $("#yahoo_input_split").height() - 50);
 
-	// Output doesn't have a border, so its offsets are different
 	$("#yahoo_output_textarea").css('width', $("#yahoo_output_split").width() - 30);
 	$("#yahoo_output_textarea").css('height', $("#yahoo_output_split").height() - 50);
+	
+	// $("#toolbar_container").css('width', $("#toolbar_split").width() - 30);
+	$("#toolbar_container").css('height', $("#toolbar_split").height() - 40);
+	
 }
 
 // Refreshes all split containers
@@ -219,7 +222,9 @@ function refreshAllSplits()
 function updateInput(){
 	clearTimeout(inputSpinnerTimeout);
 	startInputSpinner();
-    $("#yahoo_input_textarea").val($('#markup_textarea').val());
+	
+    // $("#yahoo_input_textarea").val($('#markup_textarea').val());	$("#yahoo_input_textarea").val(parseMarkup($('#markup_textarea').val()));
+	
 	inputSpinnerTimeout = setTimeout(stopInputSpinner, 1000);
 	
 	// Changing the input will change the output, so update that too
@@ -229,7 +234,9 @@ function updateInput(){
 function updateOutput(){
 	clearTimeout(outputSpinnerTimeout);
 	startOutputSpinner();
-    $("#yahoo_output_textarea").val($('#yahoo_input_textarea').val());
+	
+    // $("#yahoo_output_textarea").val($('#yahoo_input_textarea').val());
+    $("#output_preview").text(parseYahooInput($('#yahoo_input_textarea').val()));
 	outputSpinnerTimeout = setTimeout(stopOutputSpinner, 1000);
 }
 // TODO: Add refresh button on input and output. Make it spin

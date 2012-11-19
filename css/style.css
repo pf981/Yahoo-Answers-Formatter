@@ -68,7 +68,7 @@ background-repeat: no-repeat;
 
 
 
-textarea {
+textarea, #yahoo_output_textarea {
   width: 100%;
   height: 100%;
   resize: none;
@@ -77,10 +77,10 @@ textarea {
   border-width: 5px;
 }
 
-textarea[readonly="readonly"] {
+/*textarea[readonly="readonly"] {
   background-color: #C9C9C9;
   
-}
+}*/
 
 
 .split_header {
@@ -88,6 +88,12 @@ textarea[readonly="readonly"] {
   width: 100%;
   margin: 0;
   padding: 0;
+  /*height: 26px; /*FIXME:*/
+ height: 27px; /*FIXME:*/
+}
+
+.btn-group {
+  margin: 0 !important;
 }
 
 .label {
@@ -119,20 +125,56 @@ textarea[readonly="readonly"] {
 }
 
 
+.toolbar_container {
+  background-color: green !important;
+  overflow: scroll !important;
+}
+
+
+#toolbar_nav {
+  height: 26px;
+}
+
+#toolbar_nav > li > a
+{
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 10px !important;
+  margin: 0;
+}
+
+.popover {
+  /*Make the popover go over the nav bar*/
+  z-index:2000000001;
+}
 
 
 
+#yahoo_output_textarea {
+  overflow: scroll;
+}
+
+#output_preview {
+  width: 499px;
+  /*height: 100%;*/
+  font: 13px/1.231 arial,helvetica,clean,sans-serif;
+  color: #333;
+}
 
 
-
-
-
-
-
-
-
-
-
-
+#output_preview:active, #output_preview:focus {
+  border: #CCC;
+  border-width: 10px;
+  outline: 0px !important;
+  transition: none;
+  -webkit-appearance: none !important;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  outline: none !important;
+  -webkit-transition: none !important;
+  -webkit-box-shadow: none !important;
+}
 
 
