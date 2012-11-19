@@ -182,13 +182,26 @@ $(document).ready(function() {
 	outputSpinner.stop();
 	$("#refresh_input").click(function() {
 		updateInput();
-	}); 
+	});
 	$("#refresh_output").click(function() {
 		updateOutput();
 	}); 
 
 
   // Generate entities table from JSon
+
+  var oTable = $('#toolbar_table').dataTable({
+    "bPaginate" : false,
+    "bLengthChange" : false,
+    "bFilter" : true,
+    "bSort" : false,
+    "bInfo" : false,
+    "bAutoWidth" : false,
+    "bFilter" : false
+  });
+  // new FixedHeader( oTable );
+
+      
 });
 
 // Sets the width and height of the textareas based on the size of their split container
