@@ -68,7 +68,13 @@ function parseYahooInput(yahooInput) {
 
 
 // TODO: Do Yahoo! Answers weird truncating thing when the line is too long without a space
-
+// TODO: Highlight marked-up strings.
+// TODO: Make LATEX-like lists. Each item will word wrap e.g.
+//             1) This will word wrap in the
+//                current way as demonstrated
+//                    a) This is a sub-list
+//                    b) Cool
+//             2) Beans
 
 
 
