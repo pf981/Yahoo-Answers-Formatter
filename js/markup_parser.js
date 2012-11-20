@@ -20,7 +20,10 @@ function parseMarkup(markup) {
 	// TODO: May need optimisation later on
   $.each(entities, function(category, rows) {
     $.each(rows, function(index, row) {
-      input  = input.replace(row.markup, String.fromCharCode(parseInt(row.entity_num, 10)));
+      // FIXME: Need to make it check the longest markup first. E.g. check "\infty" befor "\in"
+      // FIXME: Need mechanism for when someone wants to write "\in"+"fty"
+      // Need the preceeding "\\" even though the markup variable has the backslash in it.
+      input  = input.replace(new RegExp("\\"+row.markup, "gi" ), String.fromCharCode(parseInt(row.entity_num, 10)));
     });
   }); 
 
