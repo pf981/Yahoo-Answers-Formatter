@@ -3,6 +3,7 @@
  */
 
 // FIXME: TODO: Placeholder
+// TODO: Might be able to restructure this for search optimisation. I.e. index by markup so that the conversion will be quicker
 var entities = {
   "Common Arithmetic & Alebgra" : [{
     "name" : "INTEGRAL",

@@ -201,28 +201,18 @@ $(document).ready(function() {
   });
   new FixedHeader( oTable );
   
- // var json = '{"result":true,"count":1}';
   var entitiesObj = entities;
-  
-  oTable.fnAddData( [
-        ".1",
-        ".2",
-        ".3",
-        "2.3",
-        ".4" ] );
-        
-
 
   $.each(entities, function(category, rows) {
     oTable.fnAddData([category, "", "", "", ""]);
+    // TODO: Change class of the row we just added to "category"
     $.each(rows, function(index, row) {
       oTable.fnAddData([String.fromCharCode(parseInt(row.entity_num, 10)), row.name, row.markup, row.entity_num, ""]);
+      // TODO: Add a click function for that row
     });
   });
 
 
-
-      
 });
 
 // Sets the width and height of the textareas based on the size of their split container

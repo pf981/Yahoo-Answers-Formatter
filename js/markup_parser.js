@@ -16,7 +16,15 @@ function parseMarkup(markup) {
 	input  = input.replace(/^ /g, '&#160;').replace(/\n /g, '\n&#160;');
 	input  = input.replace(/  /g, ' &#160;');
 	
-	// TODO: Parse \infty etc.
+	// Parse simple markup (\infty etc.)
+	// TODO: May need optimisation later on
+  $.each(entities, function(category, rows) {
+    $.each(rows, function(index, row) {
+      input  = input.replace(row.markup, String.fromCharCode(parseInt(row.entity_num, 10)));
+    });
+  }); 
+
+	
 	// TODO: Parse functions
 	
 	return input; // FIXME: TODO: This is just a placeholder
